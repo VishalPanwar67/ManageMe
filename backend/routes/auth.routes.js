@@ -1,10 +1,18 @@
 import express from "express";
-
-import { register, login } from "../controllers/auth.controller.js";
-
 const router = express.Router();
 
+import {
+  register,
+  login,
+  logout,
+  getMe,
+} from "../controllers/auth.controller.js";
+import { protectRoute } from "../middlewares/protectRoute.js";
+
+//routes import form the auth file
+router.get("/me", protectRoute, getMe); //to get user is loged in or not=> middleware
 router.post("/register", register);
-router.get("/login", login);
+router.post("/login", login);
+router.post("/logout", logout);
 
 export default router;
