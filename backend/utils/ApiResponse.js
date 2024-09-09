@@ -1,4 +1,4 @@
-class ApiResponse {
+class apiResponse {
   constructor(statusCode, message = "Success", data) {
     this.statusCode = statusCode;
     this.data = data;
@@ -7,16 +7,17 @@ class ApiResponse {
   }
 }
 
-const registerUser = asyncHandler(async (req, res) => {
+export { apiResponse };
 
-  if (existingUser) {
-    throw new apierror(409, "user with username exist");
-  }
-  
-  if (!avatarLocalPath) {
-    throw new apierror(404, "avatar file is required");
-  }
-   return res
-    .status(201)
-    .json(new apiresponse(200, createdUser, "user registered successfully"));
-});
+// const registerUser = asyncHandler(async (req, res) => {
+//   if (existingUser) {
+//     throw new apierror(409, "user with username exist");
+//   }
+
+//   if (!avatarLocalPath) {
+//     throw new apierror(404, "avatar file is required");
+//   }
+//   return res
+//     .status(201)
+//     .json(new apiresponse(200, createdUser, "user registered successfully"));
+// });

@@ -1,11 +1,11 @@
-class ApiError extends Error {
+class apiError extends Error {
   cpnstructor(
     statusCode,
     message = "Something went wrong",
     errors = [],
     statck = ""
   ) {
-    super(message);
+    // super(message);
     this.statusCode = statusCode;
     this.message = message;
     this.errors = errors;
@@ -20,4 +20,4 @@ class ApiError extends Error {
   }
 }
 
-export { ApiError };
+export { apiError };
