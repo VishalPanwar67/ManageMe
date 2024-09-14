@@ -11,6 +11,10 @@ const boardSchema = new Schema(
       type: String,
       //   required: [true, "description is required"],
     },
+    archived: {
+      type: Boolean,
+      default: false,
+    },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
