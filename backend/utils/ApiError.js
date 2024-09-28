@@ -1,19 +1,18 @@
 class apiError extends Error {
-  cpnstructor(
+  constructor(
     statusCode,
     message = "Something went wrong",
     errors = [],
-    statck = ""
+    stack = ""
   ) {
-    // super(message);
+    super(message); // Call the parent class constructor
     this.statusCode = statusCode;
-    this.message = message;
     this.errors = errors;
     this.data = null;
     this.success = false;
 
-    if (statck) {
-      this.statck = statck;
+    if (stack) {
+      this.stack = stack;
     } else {
       Error.captureStackTrace(this, this.constructor);
     }
