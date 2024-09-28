@@ -6,6 +6,19 @@ const listSchema = new Schema(
       type: String,
       required: [true, "title is required"],
     },
+    isArchived: {
+      type: Boolean,
+      default: false,
+    },
+    comments: [
+      {
+        type: String,
+      },
+    ],
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     board: {
       type: Schema.Types.ObjectId,
       ref: "Board",

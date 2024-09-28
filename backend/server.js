@@ -5,7 +5,8 @@ import { v2 as cloudinary } from "cloudinary"; //for using cloudinary
 
 import connectMongoDB from "./db/connectMongoDB.js";
 
-import { authRoutes, boardRoutes } from "./routes/index.routes.js";
+import { authRoutes, boardRoutes, listRoutes } from "./routes/index.routes.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 dotenv.config({
   path: "././.env",
@@ -29,6 +30,9 @@ app.use(cookieParser()); // to get cookies from req object and set cookies in re
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/board", boardRoutes);
+app.use("/list", listRoutes);
+
+app.use(errorHandler);
 
 // connect the DataBase
 connectMongoDB()
