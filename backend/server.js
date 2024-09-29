@@ -14,6 +14,7 @@ import {
   boardRoutes,
   listRoutes,
   setupCardRoutes,
+  setupCommentRoutes,
 } from "./routes/index.routes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 
@@ -45,6 +46,7 @@ app.use("/api/auth", authRoutes);
 app.use("/board", boardRoutes);
 app.use("/list", listRoutes);
 app.use("/card", setupCardRoutes(io));
+app.use("/comment", setupCommentRoutes(io));
 
 app.use(errorHandler);
 

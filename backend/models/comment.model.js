@@ -6,7 +6,7 @@ const commentSchema = new Schema(
       type: String,
       required: [true, "comment content is required"],
     },
-    user: {
+    owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: [true, "user is required"],
