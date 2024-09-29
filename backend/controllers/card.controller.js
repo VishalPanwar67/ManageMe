@@ -1,7 +1,7 @@
 import { User, List, Card } from "../models/index.model.js";
 import { asyncHandler, apiResponse, apiError } from "../utils/index.utils.js";
 
-const createCard = asyncHandler(async (req, res) => {
+const createCard = asyncHandler(async (req, res, io) => {
   const userID = req.user._id;
   const listID = req.params.listID;
 
@@ -27,6 +27,13 @@ const createCard = asyncHandler(async (req, res) => {
   }
   list.cards.push(card._id);
   await list.save();
+  console.log(card.assignedMembers);
+
+  // Notify assigned members
+  // assignedMembers.forEach((memberId) => {
+  //   io.to(memberId).emit("cardCreated", card);
+  // });
+
   res.status(200).json(new apiResponse(200, card, "Card created successfully"));
 });
 
@@ -58,7 +65,7 @@ const getCard = asyncHandler(async (req, res) => {
     .json(new apiResponse(200, card, "Card retrieved successfully"));
 });
 
-const updateCard = asyncHandler(async (req, res) => {
+const updateCard = asyncHandler(async (req, res, io) => {
   const cardID = req.params.cardID;
   const listID = req.params.listID;
   const { title, description, dueDate, labels } = req.body;
@@ -81,10 +88,18 @@ const updateCard = asyncHandler(async (req, res) => {
   card.dueDate = dueDate || card.dueDate;
   card.labels = labels || card.labels;
   await card.save();
+
+  if (card.assignedMembers.length > 0) {
+    // Notify assigned members
+    assignedMembers.forEach((memberId) => {
+      io.to(memberId).emit("cardUpdated", card);
+    });
+  }
+
   res.status(200).json(new apiResponse(200, card, "Card updated successfully"));
 });
 
-const deleteCard = asyncHandler(async (req, res) => {
+const deleteCard = asyncHandler(async (req, res, io) => {
   const cardID = req.params.cardID;
   const listID = req.params.listID;
   const list = await List.findById(listID);
@@ -99,10 +114,18 @@ const deleteCard = asyncHandler(async (req, res) => {
     throw new apiError(404, "Card not found");
   }
   await card.deleteOne();
+  if (card.assignedMembers.length > 0) {
+    // Notify assigned members
+    const assignedMembers = card.assignedMembers || []; // Fetch members from card
+    assignedMembers.forEach((memberId) => {
+      io.to(memberId).emit("cardDeleted", cardID);
+    });
+  }
+
   res.status(200).json(new apiResponse(200, card, "Card deleted successfully"));
 });
 
-const updateCardMembers = asyncHandler(async (req, res) => {
+const updateCardMembers = asyncHandler(async (req, res, io) => {
   const cardID = req.params.cardID;
   const { members } = req.body;
   const card = await Card.findById(cardID);
@@ -114,6 +137,14 @@ const updateCardMembers = asyncHandler(async (req, res) => {
   }
   card.members = members;
   await card.save();
+
+  if (card.assignedMembers.length > 0) {
+    // Notify newly assigned members
+    members.forEach((memberId) => {
+      io.to(memberId).emit("cardMembersUpdated", card);
+    });
+  }
+
   res
     .status(200)
     .json(new apiResponse(200, card, "Card members updated successfully"));
