@@ -103,6 +103,7 @@ For more information on managing environment variables in Node.js, refer to the 
 
 **$\color{purple}{\text{POST}}$**
 **Endpoint:**
+**$\color{purple}{\text{`http://127.0.0.1:5000/api/auth/register`}}$**
 $\color{red}{\text{`http://127.0.0.1:5000/api/auth/register`}}$
 
 ### Request Body (urlencoded)
