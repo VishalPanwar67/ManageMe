@@ -13,6 +13,7 @@ import {
   authRoutes,
   boardRoutes,
   listRoutes,
+  searchRoutes,
   setupCardRoutes,
   setupCommentRoutes,
   setupActivityLogRoutes,
@@ -46,6 +47,7 @@ const io = initSocket(server);
 app.use("/api/auth", authRoutes);
 app.use("/board", boardRoutes);
 app.use("/list", listRoutes);
+app.use("/search", searchRoutes);
 app.use("/card", setupCardRoutes(io));
 app.use("/comment", setupCommentRoutes(io));
 app.use("/activityLog", setupActivityLogRoutes(io));
