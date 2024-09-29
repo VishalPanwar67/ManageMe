@@ -10,14 +10,35 @@ const cardSchema = new Schema(
       type: String,
       //   required: [true, "description is required"],
     },
+    dueDate: {
+      // type: Date,
+      type: String,
+    },
+    checklist: [
+      {
+        item: { type: String },
+        completed: { type: Boolean, default: false },
+      },
+    ],
+    cover: {
+      type: String, // URL of an image or color hex
+    },
     list: {
       type: Schema.Types.ObjectId,
       ref: "List",
       required: [true, "list is required"],
     },
-    dueDate: {
-      type: Date,
-    },
+    labels: [
+      {
+        type: String,
+      },
+    ],
+    assignedMembers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
     comments: [
       {
         type: Schema.Types.ObjectId,
@@ -43,5 +64,3 @@ const cardSchema = new Schema(
 );
 
 export const Card = mongoose.model("Card", cardSchema);
-
-// export default Card
