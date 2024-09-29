@@ -102,7 +102,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Register}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/register`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/api/auth/register`}}$
 
 ### Request Body (urlencoded)
 
@@ -117,7 +117,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Login}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/login`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/api/auth/login`}}$
 
 ### Request Body (urlencoded)
 
@@ -132,14 +132,14 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Logout}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/logout`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/api/auth/logout`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get Me}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/me`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/api/auth/me`}}$
 
 ---
 
@@ -148,7 +148,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Create Board}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/`}}$
 
 ### Request Body (urlencoded)
 
@@ -162,28 +162,28 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Duplicate Board}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/duplicate/66e554542988bc8ff325f91a`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/duplicate/66e554542988bc8ff325f91a`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get Boards}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get Board by ID}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/66f8335e424c7ec778690bcb`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/66f8335e424c7ec778690bcb`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Update Board}}$
 
 **$\color{purple}{\text{PATCH}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`}}$
 
 ### Request Body (urlencoded)
 
@@ -197,14 +197,14 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Archive Board}}$
 
 **$\color{purple}{\text{PATCH}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/archive/66e55124c1701e0421648e50`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/archive/66e55124c1701e0421648e50`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Delete Board}}$
 
 **$\color{purple}{\text{DELETE}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`}}$
 
 ---
 
@@ -213,7 +213,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Create List}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f8335e424c7ec778690bcb`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f8335e424c7ec778690bcb`}}$
 
 ### Request Body (urlencoded)
 
@@ -226,21 +226,21 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Get Lists}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get List}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f83391424c7ec778690bd3`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f83391424c7ec778690bd3`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Update List}}$
 
 **$\color{purple}{\text{PATCH}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150`}}$
 
 ### Request Body (urlencoded)
 
@@ -253,14 +253,14 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Duplicate List}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/duplicate`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/duplicate`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Comment on List}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/comment`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/comment`}}$
 
 ### Request Body (urlencoded)
 
@@ -273,14 +273,14 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Archive/Unarchive List}}$
 
 **$\color{purple}{\text{PATCH}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7c737cccb3190c2bfc6a0/archive`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7c737cccb3190c2bfc6a0/archive`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Delete List}}$
 
 **$\color{purple}{\text{DELETE}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7afa186ddc0e5cd14621d`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7afa186ddc0e5cd14621d`}}$
 
 ---
 
@@ -289,7 +289,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Create Card}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`}}$
 
 ### Request Body (urlencoded)
 
@@ -306,7 +306,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Update Card}}$
 
 **$\color{purple}{\text{PATCH}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`}}$
 
 ### Request Body (urlencoded)
 
@@ -323,21 +323,21 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Delete Card}}$
 
 **$\color{purple}{\text{DELETE}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get Cards}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get Card by ID}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f8350f459a401ba1afbb7c`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f8350f459a401ba1afbb7c`}}$
 
 ---
 
@@ -346,7 +346,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Add Comment}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`}}$
 
 ### Request Body (urlencoded)
 
@@ -359,21 +359,21 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Get Comments}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Get Comment by ID}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c/66f93a3562e5582674a48775`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c/66f93a3562e5582674a48775`}}$
 
 ---
 
 ## $\color{darkorange}{\text{Delete Comment}}$
 
 **$\color{purple}{\text{DELETE}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f93a3562e5582674a48775`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/comment/66f93a3562e5582674a48775`}}$
 
 ---
 
@@ -382,7 +382,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Get All Activity}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/activityLog`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/activityLog`}}$
 
 ---
 
@@ -391,7 +391,7 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Search Cards}}$
 
 **$\color{purple}{\text{GET}}$**
-**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/search/cards?query=Project`}}$
+**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/search/cards?query=Project`}}$
 
 ### Query Parameters
 
