@@ -1,8 +1,8 @@
 ## Project Management Tool - README
 
-# <span style="color: Red;">Backend Part</span>
+# $\color{red}{\text{Backend Part}}$
 
-# <span style="color: #4169E1;"> # Project Management Tool - Package.json Guide </span>
+# $\color{#4169E1}{\text{Project Management Tool - Package.json Guide}}$
 
 This document explains the structure and contents of the `package.json` file for the Project Management Tool. This file is essential for managing project dependencies, scripts, and metadata.
 
@@ -43,7 +43,7 @@ npm start     # To start the server
 
 ---
 
-# <span style="color: #4169E1;"> # Project Configuration Settings Guide </span>
+# $\color{#4169E1}{\text{Project Configuration Settings Guide}}$
 
 This document outlines the configuration settings for your project, detailing the necessary environment variables and their purposes.
 
@@ -97,306 +97,306 @@ For more information on managing environment variables in Node.js, refer to the 
 
 ---
 
-# <span style="color: #4169E1;"> Authentication API Documentation </span>
+# $\color{#4169E1}{\text{ Authentication API Documentation }}$
 
-## <span style="color: darkorange;">Register</span>
+## $\color{darkorange}{\text{Register}}$
 
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/api/auth/register`</span>
-
-### Request Body (urlencoded)
-
-| Field                                       | Value                                                  |
-| ------------------------------------------- | ------------------------------------------------------ |
-| <span style="color: green;">username</span> | <span style="color: orange;">day7User</span>           |
-| <span style="color: green;">email</span>    | <span style="color: orange;">day7User@gmail.com</span> |
-| <span style="color: green;">password</span> | <span style="color: orange;">day7User</span>           |
-
----
-
-## <span style="color: darkorange;">Login</span>
-
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/api/auth/login`</span>
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/register`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                       | Value                                                   |
-| ------------------------------------------- | ------------------------------------------------------- |
-| <span style="color: green;">username</span> | <span style="color: orange;">firstUsre</span>           |
-| <span style="color: green;">email</span>    | <span style="color: orange;">firstUsre@gmail.com</span> |
-| <span style="color: green;">password</span> | <span style="color: orange;">firstUsre</span>           |
+| Field                            | Value                                       |
+| -------------------------------- | ------------------------------------------- |
+| $\color{green}{\text{username}}$ | $\color{orange}{\text{day7User}}$           |
+| $\color{green}{\text{email}}$    | $\color{orange}{\text{day7User@gmail.com}}$ |
+| $\color{green}{\text{password}}$ | $\color{orange}{\text{day7User}}$           |
 
 ---
 
-## <span style="color: darkorange;">Logout</span>
+## $\color{darkorange}{\text{Login}}$
 
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/api/auth/logout`</span>
-
----
-
-## <span style="color: darkorange;">Get Me</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/api/auth/me`</span>
-
----
-
-# <span style="color: #4169E1;">Board API Documentation</span>
-
-## <span style="color: darkorange;">Create Board</span>
-
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/`</span>
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/login`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                          | Value                                                     |
-| ---------------------------------------------- | --------------------------------------------------------- |
-| <span style="color: green;">title</span>       | <span style="color: orange;">Project</span>               |
-| <span style="color: green;">description</span> | <span style="color: orange;">for checking the card</span> |
+| Field                            | Value                                        |
+| -------------------------------- | -------------------------------------------- |
+| $\color{green}{\text{username}}$ | $\color{orange}{\text{firstUsre}}$           |
+| $\color{green}{\text{email}}$    | $\color{orange}{\text{firstUsre@gmail.com}}$ |
+| $\color{green}{\text{password}}$ | $\color{orange}{\text{firstUsre}}$           |
 
 ---
 
-## <span style="color: darkorange;">Duplicate Board</span>
+## $\color{darkorange}{\text{Logout}}$
 
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/duplicate/66e554542988bc8ff325f91a`</span>
-
----
-
-## <span style="color: darkorange;">Get Boards</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/`</span>
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/logout`}}$
 
 ---
 
-## <span style="color: darkorange;">Get Board by ID</span>
+## $\color{darkorange}{\text{Get Me}}$
 
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/66f8335e424c7ec778690bcb`</span>
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/api/auth/me`}}$
 
 ---
 
-## <span style="color: darkorange;">Update Board</span>
+# $\color{#4169E1}{\text{Board API Documentation}}$
 
-**<span style="color: purple;">PATCH</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`</span>
+## $\color{darkorange}{\text{Create Board}}$
+
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                          | Value                                                       |
-| ---------------------------------------------- | ----------------------------------------------------------- |
-| <span style="color: green;">title</span>       | <span style="color: orange;">update Activity Board 1</span> |
-| <span style="color: green;">description</span> | <span style="color: orange;">this is updated des</span>     |
+| Field                               | Value                                          |
+| ----------------------------------- | ---------------------------------------------- |
+| $\color{green}{\text{title}}$       | $\color{orange}{\text{Project}}$               |
+| $\color{green}{\text{description}}$ | $\color{orange}{\text{for checking the card}}$ |
 
 ---
 
-## <span style="color: darkorange;">Archive Board</span>
+## $\color{darkorange}{\text{Duplicate Board}}$
 
-**<span style="color: purple;">PATCH</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/archive/66e55124c1701e0421648e50`</span>
-
----
-
-## <span style="color: darkorange;">Delete Board</span>
-
-**<span style="color: purple;">DELETE</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`</span>
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/duplicate/66e554542988bc8ff325f91a`}}$
 
 ---
 
-# <span style="color: #4169E1;">List API Documentation</span>
+## $\color{darkorange}{\text{Get Boards}}$
 
-## <span style="color: darkorange;">Create List</span>
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/`}}$
 
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f8335e424c7ec778690bcb`</span>
+---
+
+## $\color{darkorange}{\text{Get Board by ID}}$
+
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/66f8335e424c7ec778690bcb`}}$
+
+---
+
+## $\color{darkorange}{\text{Update Board}}$
+
+**$\color{purple}{\text{PATCH}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                    | Value                                                   |
-| ---------------------------------------- | ------------------------------------------------------- |
-| <span style="color: green;">title</span> | <span style="color: orange;">1st list in board 5</span> |
+| Field                               | Value                                            |
+| ----------------------------------- | ------------------------------------------------ |
+| $\color{green}{\text{title}}$       | $\color{orange}{\text{update Activity Board 1}}$ |
+| $\color{green}{\text{description}}$ | $\color{orange}{\text{this is updated des}}$     |
 
 ---
 
-## <span style="color: darkorange;">Get Lists</span>
+## $\color{darkorange}{\text{Archive Board}}$
 
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba`</span>
-
----
-
-## <span style="color: darkorange;">Get List</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f83391424c7ec778690bd3`</span>
+**$\color{purple}{\text{PATCH}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/archive/66e55124c1701e0421648e50`}}$
 
 ---
 
-## <span style="color: darkorange;">Update List</span>
+## $\color{darkorange}{\text{Delete Board}}$
 
-**<span style="color: purple;">PATCH</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150`</span>
+**$\color{purple}{\text{DELETE}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/board/66f94d30cc3120bb6d727ba8`}}$
+
+---
+
+# $\color{#4169E1}{\text{List API Documentation}}$
+
+## $\color{darkorange}{\text{Create List}}$
+
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f8335e424c7ec778690bcb`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                    | Value                                                        |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| <span style="color: green;">title</span> | <span style="color: orange;">this is update 4th again</span> |
+| Field                         | Value                                        |
+| ----------------------------- | -------------------------------------------- |
+| $\color{green}{\text{title}}$ | $\color{orange}{\text{1st list in board 5}}$ |
 
 ---
 
-## <span style="color: darkorange;">Duplicate List</span>
+## $\color{darkorange}{\text{Get Lists}}$
 
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/duplicate`</span>
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba`}}$
 
 ---
 
-## <span style="color: darkorange;">Comment on List</span>
+## $\color{darkorange}{\text{Get List}}$
 
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/comment`</span>
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f83391424c7ec778690bd3`}}$
+
+---
+
+## $\color{darkorange}{\text{Update List}}$
+
+**$\color{purple}{\text{PATCH}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                      | Value                                                 |
-| ------------------------------------------ | ----------------------------------------------------- |
-| <span style="color: green;">comment</span> | <span style="color: orange;">this is comment 3</span> |
+| Field                         | Value                                             |
+| ----------------------------- | ------------------------------------------------- |
+| $\color{green}{\text{title}}$ | $\color{orange}{\text{this is update 4th again}}$ |
 
 ---
 
-## <span style="color: darkorange;">Archive/Unarchive List</span>
+## $\color{darkorange}{\text{Duplicate List}}$
 
-**<span style="color: purple;">PATCH</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7c737cccb3190c2bfc6a0/archive`</span>
-
----
-
-## <span style="color: darkorange;">Delete List</span>
-
-**<span style="color: purple;">DELETE</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7afa186ddc0e5cd14621d`</span>
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/duplicate`}}$
 
 ---
 
-# <span style="color: #4169E1;">Card API Documentation</span>
+## $\color{darkorange}{\text{Comment on List}}$
 
-## <span style="color: darkorange;">Create Card</span>
-
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`</span>
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7bc80350a55a557239150/comment`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                              | Value                                                               |
-| -------------------------------------------------- | ------------------------------------------------------------------- |
-| <span style="color: green;">title</span>           | <span style="color: orange;">active card</span>                     |
-| <span style="color: green;">description</span>     | <span style="color: orange;">lets check it is created or not</span> |
-| <span style="color: green;">dueDate</span>         | <span style="color: orange;">20/11/2024</span>                      |
-| <span style="color: green;">labels</span>          | <span style="color: orange;">soket</span>                           |
-| <span style="color: green;">assignedMembers</span> | <span style="color: orange;">-</span>                               |
+| Field                           | Value                                      |
+| ------------------------------- | ------------------------------------------ |
+| $\color{green}{\text{comment}}$ | $\color{orange}{\text{this is comment 3}}$ |
 
 ---
 
-## <span style="color: darkorange;">Update Card</span>
+## $\color{darkorange}{\text{Archive/Unarchive List}}$
 
-**<span style="color: purple;">PATCH</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`</span>
+**$\color{purple}{\text{PATCH}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7c737cccb3190c2bfc6a0/archive`}}$
+
+---
+
+## $\color{darkorange}{\text{Delete List}}$
+
+**$\color{purple}{\text{DELETE}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/list/66f7aeda99b231d0cba179ba/66f7afa186ddc0e5cd14621d`}}$
+
+---
+
+# $\color{#4169E1}{\text{Card API Documentation}}$
+
+## $\color{darkorange}{\text{Create Card}}$
+
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                              | Value                                                                      |
-| -------------------------------------------------- | -------------------------------------------------------------------------- |
-| <span style="color: green;">title</span>           | <span style="color: orange;">soket card update</span>                      |
-| <span style="color: green;">description</span>     | <span style="color: orange;">lets check it is created or not update</span> |
-| <span style="color: green;">dueDate</span>         | <span style="color: orange;">25/11/2024</span>                             |
-| <span style="color: green;">labels</span>          | <span style="color: orange;">update</span>                                 |
-| <span style="color: green;">assignedMembers</span> | <span style="color: orange;">-</span>                                      |
+| Field                                   | Value                                                    |
+| --------------------------------------- | -------------------------------------------------------- |
+| $\color{green}{\text{title}}$           | $\color{orange}{\text{active card}}$                     |
+| $\color{green}{\text{description}}$     | $\color{orange}{\text{lets check it is created or not}}$ |
+| $\color{green}{\text{dueDate}}$         | $\color{orange}{\text{20/11/2024}}$                      |
+| $\color{green}{\text{labels}}$          | $\color{orange}{\text{soket}}$                           |
+| $\color{green}{\text{assignedMembers}}$ | $\color{orange}{\text{-}}$                               |
 
 ---
 
-## <span style="color: darkorange;">Delete Card</span>
+## $\color{darkorange}{\text{Update Card}}$
 
-**<span style="color: purple;">DELETE</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`</span>
-
----
-
-## <span style="color: darkorange;">Get Cards</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`</span>
-
----
-
-## <span style="color: darkorange;">Get Card by ID</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f8350f459a401ba1afbb7c`</span>
-
----
-
-# <span style="color: #4169E1;">Comment API Documentation</span>
-
-## <span style="color: darkorange;">Add Comment</span>
-
-**<span style="color: purple;">POST</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`</span>
+**$\color{purple}{\text{PATCH}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`}}$
 
 ### Request Body (urlencoded)
 
-| Field                                      | Value                                                   |
-| ------------------------------------------ | ------------------------------------------------------- |
-| <span style="color: green;">content</span> | <span style="color: orange;">This is the comment</span> |
+| Field                                   | Value                                                           |
+| --------------------------------------- | --------------------------------------------------------------- |
+| $\color{green}{\text{title}}$           | $\color{orange}{\text{soket card update}}$                      |
+| $\color{green}{\text{description}}$     | $\color{orange}{\text{lets check it is created or not update}}$ |
+| $\color{green}{\text{dueDate}}$         | $\color{orange}{\text{25/11/2024}}$                             |
+| $\color{green}{\text{labels}}$          | $\color{orange}{\text{update}}$                                 |
+| $\color{green}{\text{assignedMembers}}$ | $\color{orange}{\text{-}}$                                      |
 
 ---
 
-## <span style="color: darkorange;">Get Comments</span>
+## $\color{darkorange}{\text{Delete Card}}$
 
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`</span>
-
----
-
-## <span style="color: darkorange;">Get Comment by ID</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c/66f93a3562e5582674a48775`</span>
+**$\color{purple}{\text{DELETE}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f933f3ca1c6ff23c63526b`}}$
 
 ---
 
-## <span style="color: darkorange;">Delete Comment</span>
+## $\color{darkorange}{\text{Get Cards}}$
 
-**<span style="color: purple;">DELETE</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/comment/66f93a3562e5582674a48775`</span>
-
----
-
-# <span style="color: #4169E1;">Activity Log API Documentation</span>
-
-## <span style="color: darkorange;">Get All Activity</span>
-
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/activityLog`</span>
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3`}}$
 
 ---
 
-# <span style="color: #4169E1;">Search Cards API Documentation</span>
+## $\color{darkorange}{\text{Get Card by ID}}$
 
-## <span style="color: darkorange;">Search Cards</span>
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/card/66f83391424c7ec778690bd3/66f8350f459a401ba1afbb7c`}}$
 
-**<span style="color: purple;">GET</span>**
-**Endpoint:** <span style="color: blue;">`http://127.0.0.1:5000/search/cards?query=Project`</span>
+---
+
+# $\color{#4169E1}{\text{Comment API Documentation}}$
+
+## $\color{darkorange}{\text{Add Comment}}$
+
+**$\color{purple}{\text{POST}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`}}$
+
+### Request Body (urlencoded)
+
+| Field                           | Value                                        |
+| ------------------------------- | -------------------------------------------- |
+| $\color{green}{\text{content}}$ | $\color{orange}{\text{This is the comment}}$ |
+
+---
+
+## $\color{darkorange}{\text{Get Comments}}$
+
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c`}}$
+
+---
+
+## $\color{darkorange}{\text{Get Comment by ID}}$
+
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f8350f459a401ba1afbb7c/66f93a3562e5582674a48775`}}$
+
+---
+
+## $\color{darkorange}{\text{Delete Comment}}$
+
+**$\color{purple}{\text{DELETE}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/comment/66f93a3562e5582674a48775`}}$
+
+---
+
+# $\color{#4169E1}{\text{Activity Log API Documentation}}$
+
+## $\color{darkorange}{\text{Get All Activity}}$
+
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/activityLog`}}$
+
+---
+
+# $\color{#4169E1}{\text{Search Cards API Documentation}}$
+
+## $\color{darkorange}{\text{Search Cards}}$
+
+**$\color{purple}{\text{GET}}$**
+**Endpoint:**$\color{#d3e667}{\text{`http://127.0.0.1:5000/search/cards?query=Project`}}$
 
 ### Query Parameters
 
-| Parameter                                | Value                                       |
-| ---------------------------------------- | ------------------------------------------- |
-| <span style="color: green;">query</span> | <span style="color: orange;">Project</span> |
+| Parameter                     | Value                            |
+| ----------------------------- | -------------------------------- |
+| $\color{green}{\text{query}}$ | $\color{orange}{\text{Project}}$ |
 
 ---
