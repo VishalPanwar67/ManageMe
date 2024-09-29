@@ -19,6 +19,15 @@ const createList = asyncHandler(async (req, res) => {
   }
   board.lists.push(list._id);
   await board.save();
+
+  const context = {
+    type: "list", // Ensure the type is "board"
+    details: {
+      boardId: list._id, // Correctly reference the newly created board ID
+      title: list.title,
+    },
+  };
+  await addActivityLog("create", userID, context);
   res.status(200).json(new apiResponse(200, list, "List created successfully"));
 });
 
@@ -63,6 +72,14 @@ const updateList = asyncHandler(async (req, res) => {
   }
   list.title = title;
   await list.save();
+  const context = {
+    type: "list", // Ensure the type is "board"
+    details: {
+      boardId: list._id, // Correctly reference the newly created board ID
+      title: list.title,
+    },
+  };
+  await addActivityLog("update", userID, context);
   res.status(200).json(new apiResponse(200, list, "List updated successfully"));
 });
 
@@ -81,6 +98,14 @@ const deleteList = asyncHandler(async (req, res) => {
     throw new apiError(401, "Unauthorized");
   }
   await list.deleteOne();
+  const context = {
+    type: "list", // Ensure the type is "board"
+    details: {
+      boardId: list._id, // Correctly reference the newly created board ID
+      title: list.title,
+    },
+  };
+  await addActivityLog("delete", userID, context);
   res.status(200).json(new apiResponse(200, list, "List deleted successfully"));
 });
 

@@ -15,6 +15,7 @@ import {
   listRoutes,
   setupCardRoutes,
   setupCommentRoutes,
+  setupActivityLogRoutes,
 } from "./routes/index.routes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 
@@ -47,6 +48,7 @@ app.use("/board", boardRoutes);
 app.use("/list", listRoutes);
 app.use("/card", setupCardRoutes(io));
 app.use("/comment", setupCommentRoutes(io));
+app.use("/activityLog", setupActivityLogRoutes(io));
 
 app.use(errorHandler);
 

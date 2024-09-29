@@ -1,5 +1,6 @@
 import { User, List, Card } from "../models/index.model.js";
 import { asyncHandler, apiResponse, apiError } from "../utils/index.utils.js";
+import { addActivityLog } from "./activity.controller.js";
 
 const createCard = asyncHandler(async (req, res, io) => {
   const userID = req.user._id;
@@ -27,13 +28,22 @@ const createCard = asyncHandler(async (req, res, io) => {
   }
   list.cards.push(card._id);
   await list.save();
-  console.log(card.assignedMembers);
 
-  // Notify assigned members
-  // assignedMembers.forEach((memberId) => {
-  //   io.to(memberId).emit("cardCreated", card);
-  // });
+  // Log the activity of creating a card
+  const context = {
+    type: "card",
+    details: {
+      cardId: card._id,
+      title: card.title,
+    },
+  };
+  await addActivityLog("create", userID, context);
 
+  if (card.assignedMembers) {
+    card.assignedMembers.forEach((memberId) => {
+      io.to(memberId.toString()).emit("cardCreated", card);
+    });
+  }
   res.status(200).json(new apiResponse(200, card, "Card created successfully"));
 });
 
@@ -66,6 +76,7 @@ const getCard = asyncHandler(async (req, res) => {
 });
 
 const updateCard = asyncHandler(async (req, res, io) => {
+  const userID = req.user._id;
   const cardID = req.params.cardID;
   const listID = req.params.listID;
   const { title, description, dueDate, labels } = req.body;
@@ -89,6 +100,15 @@ const updateCard = asyncHandler(async (req, res, io) => {
   card.labels = labels || card.labels;
   await card.save();
 
+  const context = {
+    type: "card",
+    details: {
+      cardId: card._id,
+      title: card.title,
+    },
+  };
+  await addActivityLog("update", userID, context);
+
   if (card.assignedMembers.length > 0) {
     // Notify assigned members
     assignedMembers.forEach((memberId) => {
@@ -100,6 +120,7 @@ const updateCard = asyncHandler(async (req, res, io) => {
 });
 
 const deleteCard = asyncHandler(async (req, res, io) => {
+  const userID = req.user._id;
   const cardID = req.params.cardID;
   const listID = req.params.listID;
   const list = await List.findById(listID);
@@ -114,6 +135,14 @@ const deleteCard = asyncHandler(async (req, res, io) => {
     throw new apiError(404, "Card not found");
   }
   await card.deleteOne();
+  const context = {
+    type: "card",
+    details: {
+      cardId: card._id,
+      title: card.title,
+    },
+  };
+  await addActivityLog("delete", userID, context);
   if (card.assignedMembers.length > 0) {
     // Notify assigned members
     const assignedMembers = card.assignedMembers || []; // Fetch members from card

@@ -1,5 +1,6 @@
 import { Board, User } from "../models/index.model.js";
 import { asyncHandler, apiResponse, apiError } from "../utils/index.utils.js";
+import { addActivityLog } from "./activity.controller.js";
 
 const createBoard = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
@@ -28,6 +29,16 @@ const createBoard = asyncHandler(async (req, res) => {
     user.boards.push(board._id);
     await user.save();
   }
+
+  // Create activity context for the new board
+  const context = {
+    type: "board", // Ensure the type is "board"
+    details: {
+      boardId: board._id, // Correctly reference the newly created board ID
+      title: board.title,
+    },
+  };
+  await addActivityLog("create", userID, context);
 
   return res
     .status(201)
@@ -87,6 +98,16 @@ const updateBoard = asyncHandler(async (req, res) => {
   board.title = title || board.title;
   board.description = description || board.description;
   await board.save();
+
+  const context = {
+    type: "board", // Ensure the type is "board"
+    details: {
+      boardId: board._id, // Correctly reference the newly created board ID
+      title: board.title,
+    },
+  };
+  await addActivityLog("update", userID, context);
+
   res
     .status(200)
     .json(new apiResponse(200, board, "Board updated successfully"));
@@ -103,6 +124,15 @@ const deleteBoard = asyncHandler(async (req, res) => {
     throw new apiError(401, "Unauthorized");
   }
   await board.deleteOne();
+
+  const context = {
+    type: "board", // Ensure the type is "board"
+    details: {
+      boardId: board._id, // Correctly reference the newly created board ID
+      title: board.title,
+    },
+  };
+  await addActivityLog("delete", userID, context);
   res
     .status(200)
     .json(new apiResponse(200, board, "Board deleted successfully"));
@@ -157,6 +187,14 @@ const duplicateBoard = asyncHandler(async (req, res) => {
     user.boards.push(newBoard._id);
     await user.save();
   }
+  const context = {
+    type: "board", // Ensure the type is "board"
+    details: {
+      boardId: newBoard._id, // Correctly reference the newly created board ID
+      title: newBoard.title,
+    },
+  };
+  await addActivityLog("create", userID, context);
   res
     .status(200)
     .json(new apiResponse(200, newBoard, "Board duplicated successfully"));
