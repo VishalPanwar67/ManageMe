@@ -102,7 +102,8 @@ For more information on managing environment variables in Node.js, refer to the 
 ## $\color{darkorange}{\text{Register}}$
 
 **$\color{purple}{\text{POST}}$**
-**Endpoint:**$\color{blue}{\text{`http://127.0.0.1:5000/api/auth/register`}}$
+**Endpoint:**
+$\color{blue}{\text{`http://127.0.0.1:5000/api/auth/register`}}$
 
 ### Request Body (urlencoded)
 
