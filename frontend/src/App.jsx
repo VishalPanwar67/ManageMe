@@ -3,6 +3,8 @@ import "./App.css";
 
 import { PrivateRoute } from "./components/index.component.js";
 
+// import Demo from "./components/Demo.jsx"
+
 import {
   LoginPage,
   SignupPage,
@@ -14,7 +16,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<PrivateRoute children={<HomePage />} />} />
+        {/* <Route path="/test" element={<Demo />} /> */}
+        <Route path={"/"} element={<PrivateRoute children={<HomePage />} />} />
+        <Route
+          path="/home"
+          element={<PrivateRoute children={<HomePage />} />}
+        />
         <Route path="/board/" element={<BoardPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
