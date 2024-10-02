@@ -1,6 +1,14 @@
 import React from "react";
 
-import { ButtonCall, ButtonModrn } from "./Button.jsx";
+import {
+  ButtonCall,
+  ButtonModrn,
+  ButtonDel,
+  ButtonEdit,
+  ButtonBack,
+  ButtonRight,
+  ButtonCancel,
+} from "./button/Button.jsx";
 import { Input } from "./Input.jsx";
 
 function Demo() {
@@ -8,7 +16,17 @@ function Demo() {
     <div>
       <ButtonCall text="ButtonCall" color="orange" />
       <ButtonModrn text="ButtonModrn" color="cyan" />
-      <Input bgColor="red" textColor="blue" placeholder="Input" borderColor="yellow" />
+      <ButtonDel />
+      <ButtonEdit />
+      <ButtonBack />
+      <ButtonRight />
+      <ButtonCancel />
+      <Input
+        bgColor="red"
+        textColor="blue"
+        placeholder="Input"
+        borderColor="yellow"
+      />
     </div>
   );
 }
