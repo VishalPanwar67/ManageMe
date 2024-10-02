@@ -1,5 +1,6 @@
 import { List, Board, Card, User } from "../models/index.model.js";
 import { asyncHandler, apiResponse, apiError } from "../utils/index.utils.js";
+import { addActivityLog } from "./activity.controller.js";
 
 const createList = asyncHandler(async (req, res) => {
   const userID = req.user._id;

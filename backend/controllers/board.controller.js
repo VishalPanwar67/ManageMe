@@ -1,4 +1,4 @@
-import { Board, User } from "../models/index.model.js";
+import { Board, User, List, Card } from "../models/index.model.js";
 import { asyncHandler, apiResponse, apiError } from "../utils/index.utils.js";
 import { addActivityLog } from "./activity.controller.js";
 
@@ -116,13 +116,24 @@ const updateBoard = asyncHandler(async (req, res) => {
 const deleteBoard = asyncHandler(async (req, res) => {
   const userID = req.user._id;
   const boardID = req.params.id;
+
   const board = await Board.findById(boardID);
   if (!board) {
     throw new apiError(404, "Board not found");
   }
+
   if (board.owner.toString() !== userID.toString()) {
     throw new apiError(401, "Unauthorized");
   }
+
+  const lists = await List.find({ board: boardID });
+  console.log(lists.length);
+  if (lists.length > 0) {
+    await Card.deleteMany({ list: { $in: lists.map((list) => list._id) } });
+  }
+
+  await List.deleteMany({ board: boardID });
+
   await board.deleteOne();
 
   const context = {
