@@ -11,6 +11,7 @@ import {
   HomePage,
   BoardPage,
   BoardDetails,
+  ListDetails,
 } from "./pages/index.Pages.js";
 
 function App() {
@@ -30,8 +31,9 @@ function App() {
         <Route path="/board/:boardId" element={<BoardDetails />} />
         {/* <Route path="/board/board1" element={<BoardDetails />} /> */}
         {/* list Routes */}
-        <Route path="/list/:boardId/:listId" element={<Demo />} />
+        <Route path="/list/:boardId/:listId" element={<ListDetails />} />
         {/* card Routes*/}
+        <Route path="/card/:listId/:cardId" element={<Demo />} />
         {/* Auth Routes*/}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />

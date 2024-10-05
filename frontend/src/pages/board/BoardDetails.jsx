@@ -158,15 +158,37 @@ const BoardDetails = () => {
             </div>
           </div>
           {/* Created At and Updated At Area */}
-          <div className="p-4 bg-gray-100 text-center">
+          <div className="bg-gray-100 text-center p-3">
             <div className="text-gray-600 font-mono text-sm">
+              {"| "}
               <span>
-                Created At: {new Date(board.createdAt).toLocaleString()}
+                <strong>Created At: </strong>
+                {new Date(board.createdAt).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+                ,{" "}
+                {new Date(board.createdAt).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </span>
-              <br />
+              {" | "}
               <span>
-                Updated At: {new Date(board.updatedAt).toLocaleString()}
+                <strong>Updated At: </strong>
+                {new Date(board.createdAt).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+                ,{" "}
+                {new Date(board.createdAt).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </span>
+              {" |"}
             </div>
           </div>
         </div>

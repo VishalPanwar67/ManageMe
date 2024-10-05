@@ -127,7 +127,7 @@ const deleteBoard = asyncHandler(async (req, res) => {
   }
 
   const lists = await List.find({ board: boardID });
-  console.log(lists.length);
+  // console.log(lists.length);
   if (lists.length > 0) {
     await Card.deleteMany({ list: { $in: lists.map((list) => list._id) } });
   }

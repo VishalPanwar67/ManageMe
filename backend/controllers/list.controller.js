@@ -44,7 +44,7 @@ const getLists = asyncHandler(async (req, res) => {
 });
 
 const getList = asyncHandler(async (req, res) => {
-  const { boardID, listID } = req.params;
+  const { listID } = req.params;
 
   const list = await List.findById(listID);
 
@@ -98,6 +98,12 @@ const deleteList = asyncHandler(async (req, res) => {
   ) {
     throw new apiError(401, "Unauthorized");
   }
+
+  const cards = await Card.find({ list: listID });
+  if (cards.length > 0) {
+    await Card.deleteMany({ list: listID });
+  }
+
   await list.deleteOne();
   const context = {
     type: "list", // Ensure the type is "board"
