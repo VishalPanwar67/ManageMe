@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 
 import { PrivateRoute } from "./components/index.component.js";
 
@@ -12,6 +11,7 @@ import {
   BoardPage,
   BoardDetails,
   ListDetails,
+  CardDetails,
 } from "./pages/index.Pages.js";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         {/* list Routes */}
         <Route path="/list/:boardId/:listId" element={<ListDetails />} />
         {/* card Routes*/}
-        <Route path="/card/:listId/:cardId" element={<Demo />} />
+        <Route path="/card/:listId/:cardId" element={<CardDetails />} />
         {/* Auth Routes*/}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
