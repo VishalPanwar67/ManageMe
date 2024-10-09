@@ -16,12 +16,16 @@ const createCard = asyncHandler(async (req, res, io) => {
     throw new apiError(401, "Unauthorized");
   }
 
+  const current_date = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`;
+
+  // console.log(current_date);
+
   const card = await Card.create({
     title,
-    description,
+    description: description || "description",
     list: listID,
-    dueDate,
-    labels,
+    dueDate: dueDate || current_date,
+    labels: labels || "lables",
   });
   if (!card) {
     throw new apiError(500, "Card not created");
@@ -49,7 +53,10 @@ const createCard = asyncHandler(async (req, res, io) => {
 
 const getCards = asyncHandler(async (req, res) => {
   const listID = req.params.listID;
-  const list = await List.findById(listID).populate("cards");
+  const list = await List.findById(listID).populate({
+    path: "cards",
+    options: { sort: { createdAt: -1 } },
+  });
   if (!list) {
     throw new apiError(404, "List not found");
   }

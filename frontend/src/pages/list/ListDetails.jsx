@@ -8,6 +8,7 @@ import {
   ButtonBack,
   ButtonRight,
   ButtonCancel,
+  ButtonModrn,
 } from "../../components/index.component.js";
 
 const ListDetails = () => {
@@ -19,8 +20,8 @@ const ListDetails = () => {
   const [error, setError] = useState(null);
 
   const [editMode, setEditMode] = useState(false);
-
   const [updatedTitle, setUpdatedTitle] = useState("");
+
 
   useEffect(() => {
     const fetchBoard = async () => {
@@ -59,7 +60,7 @@ const ListDetails = () => {
       try {
         const response = await axios.get(`/api/card/${listId}`);
         setCards(response.data.data);
-        // console.log(response.data.data);
+        console.log(response.data.data);
       } catch (error) {
         setError(error);
       }
@@ -103,6 +104,19 @@ const ListDetails = () => {
     return <p>Loading...</p>;
   }
 
+  const createCard = async () => {
+    try {
+      const newCard = {
+        title: "New Card",
+        description: "",
+      };
+      const response = await axios.post(`/api/card/${listId}`, newCard);
+      setCards([...cards, response.data.data]);
+    } catch (error) {
+      setError(error);
+      console.error("Error creating card", error);
+    }
+  };
   return (
     <>
       <section className="w-full min-h-screen h-auto flex align-center justify-center p-4 border-2 border-red-400 ">
@@ -142,6 +156,13 @@ const ListDetails = () => {
             {list?.description}
           </p> */}
           <hr className="z-40" />
+          <div className=" m-0 absolute top-16 right-4 z-40">
+            <ButtonModrn
+              text="Create"
+              color="blue"
+              onClick={() => createCard()}
+            />
+          </div>
           {/* Cards Section */}
           <div className="w-full relative flex flex-wrap z-20">
             {cards?.map((card) => (
