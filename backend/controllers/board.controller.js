@@ -47,9 +47,9 @@ const createBoard = asyncHandler(async (req, res) => {
 
 const getBoards = asyncHandler(async (req, res) => {
   const userID = req.user._id;
-  const boards = await Board.find({ owner: userID }).populate(
-    "lists activityLogs"
-  );
+  const boards = await Board.find({ owner: userID })
+    .populate("lists activityLogs")
+    .sort({ createdAt: -1 });
 
   if (!boards) {
     throw new apiError(404, "Boards not found");

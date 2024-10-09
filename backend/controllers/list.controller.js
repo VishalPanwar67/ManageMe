@@ -34,7 +34,10 @@ const createList = asyncHandler(async (req, res) => {
 
 const getLists = asyncHandler(async (req, res) => {
   const boardID = req.params.boardID;
-  const board = await Board.findById(boardID).populate("lists");
+  const board = await Board.findById(boardID).populate({
+    path: "lists",
+    options: { sort: { createdAt: -1 } },
+  });
   if (!board) {
     throw new apiError(404, "Board not found");
   }

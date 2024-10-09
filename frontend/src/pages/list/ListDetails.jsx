@@ -22,6 +22,8 @@ const ListDetails = () => {
   const [editMode, setEditMode] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState("");
 
+ 
+
   useEffect(() => {
     const fetchBoard = async () => {
       if (!boardId) {

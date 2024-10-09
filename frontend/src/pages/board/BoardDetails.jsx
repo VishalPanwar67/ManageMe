@@ -8,6 +8,8 @@ import {
   ButtonBack,
   ButtonRight,
   ButtonCancel,
+  Input,
+  ButtonModrn,
 } from "../../components/index.component.js";
 
 const BoardDetails = () => {
@@ -22,6 +24,9 @@ const BoardDetails = () => {
   const [updatedDescription, setUpdatedDescription] = useState("");
 
   const [lists, setLists] = useState(null);
+
+  const [isCreating, setIsCreating] = useState(false);
+  const [newListTitle, setNewListTitle] = useState("");
 
   useEffect(() => {
     const fetchBoard = async () => {
@@ -88,10 +93,25 @@ const BoardDetails = () => {
     return <p>Loading...</p>;
   }
 
+  const createList = async () => {
+    try {
+      const response = await axios.post(`/api/list/${boardId}`, {
+        title: newListTitle || "New List",
+      });
+      setLists([response.data.data, ...lists]);
+      setIsCreating(false);
+    } catch (error) {
+      setError(error);
+    }
+  };
+
   return (
     <>
-      <div className="w-[80%] block  my-5 m-auto">
-        <div className="card w-full font-sans bg-white rounded-lg overflow-hidden transform transition duration-500">
+      <div className="w-[80%]  block  my-5 m-auto">
+        {/* {isCreating && (
+         
+        )} */}
+        <div className="card w-full font-sans bg-white rounded-lg transform transition duration-500">
           <div className="p-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
             <div className="flex justify-between items-center">
               <div className="flex space-x-[5px]">
@@ -134,6 +154,39 @@ const BoardDetails = () => {
             ) : (
               <div className="text-gray-700 mb-4">{board.description}</div>
             )}
+            {!editMode && !isCreating && (
+              <div className=" flex align-center justify-center absolute top-20 right-7 ">
+                <ButtonModrn
+                  text="Create List"
+                  onClick={() => setIsCreating(true)}
+                />
+              </div>
+            )}
+
+            {isCreating && (
+              <div className=" absolute w-full h-[50vh] flex align-center justify-center z-50  bg-red-600">
+                <div className="absolute -top-36 -left-32 z-20 w-[96vw] h-[95vh] bg-slate-500 opacity-70 blur-sm "></div>
+                <div className=" flex align-center justify-center absolute z-50 w-[80%] ">
+                  <div className=" flex flex-col gap-2 w-[50%] h-[50vh] ">
+                    <Input
+                      type="text"
+                      placeholder="Board Description"
+                      value={newListTitle}
+                      onChange={(e) => setNewListTitle(e.target.value)}
+                    />
+                    <div className=" flex  align-center justify-center gap-2 ">
+                      <ButtonModrn text="Create List" onClick={createList} />
+                      <ButtonModrn
+                        text="Cancel"
+                        color="red"
+                        onClick={() => setIsCreating(false)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div>
               {/* List Area */}
               {lists?.map((list) => (
