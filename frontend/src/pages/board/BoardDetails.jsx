@@ -10,6 +10,7 @@ import {
   ButtonCancel,
   Input,
   ButtonModrn,
+  ButtonHome,
 } from "../../components/index.component.js";
 
 const BoardDetails = () => {
@@ -107,10 +108,8 @@ const BoardDetails = () => {
 
   return (
     <>
-      <div className="w-[80%]  block  my-5 m-auto">
-        {/* {isCreating && (
-         
-        )} */}
+      <div className="w-[80%]  block  my-5 m-auto bg-purple-900">
+        <ButtonHome />
         <div className="card w-full font-sans bg-white rounded-lg transform transition duration-500">
           <div className="p-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
             <div className="flex justify-between items-center">

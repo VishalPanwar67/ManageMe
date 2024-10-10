@@ -8,6 +8,7 @@ import {
   ButtonBack,
   ButtonRight,
   ButtonCancel,
+  ButtonHome,
 } from "./button/Button.jsx";
 import { Input } from "./Input.jsx";
 import ActiveLog from "./ActiveLog.jsx";
@@ -19,6 +20,8 @@ function Demo() {
     <div>
       <BoardOut />
       <Profile />
+
+      <ButtonHome />
       <ButtonCall text="ButtonCall" color="orange" />
       <ButtonModrn text="ButtonModrn" color="cyan" />
       <ButtonDel />

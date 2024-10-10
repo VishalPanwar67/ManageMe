@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import { ButtonDel } from "../../components/index.component";
+import { ButtonDel, ButtonHome } from "../../components/index.component";
 
 const EditCard = () => {
   const navigate = useNavigate();
@@ -71,6 +71,7 @@ const EditCard = () => {
   return (
     <>
       <div className="w-full min-h-screen h-auto  bg-purple-900 p-3">
+        <ButtonHome />
         <form>
           {error && <p className="text-red-500">{error}</p>}
 

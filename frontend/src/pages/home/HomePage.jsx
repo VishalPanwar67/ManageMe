@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { BoardPage } from "../index.Pages.js";
+import { Link, useNavigate } from "react-router-dom";
+
 import {
   ActiveLog,
   Profile,
   BoardOut,
+  ButtonCall,
 } from "../../components/index.component.js";
 import { formatDate } from "../../utils/indexUtils.js";
 
 const homepage = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [boards, setBoards] = useState(null);
   const [activity, setActivity] = useState(null);
@@ -54,6 +56,20 @@ const homepage = () => {
     fetchActivity();
   }, []);
 
+  const logOut = async () => {
+    try {
+      const response = await axios.post("/api/api/auth/logout", {});
+      if (response.status === 200) {
+        // console.log("Logout successful. Redirecting...");
+        navigate("/login");
+        return true;
+      }
+    } catch (error) {
+      console.error("Authentication check failed:", error);
+      return false;
+    }
+  };
+
   // console.log(activity);
   return (
     <>
@@ -70,7 +86,17 @@ const homepage = () => {
             )}
           </div>
           {/* comments section */}
-          <div className=" h-[50vh]"></div>
+          <div className="h-[50vh] p-2  flex flex-col justify-between">
+            <div></div>{" "}
+            <div className=" h-12 flex justify-start">
+              <ButtonCall
+                text="Log Out"
+                color="red"
+                pgColor="purple-600"
+                onClick={logOut}
+              />
+            </div>
+          </div>
         </div>
         {/* Board section */}
         <div className=" w-[50vw] flex flex-col">

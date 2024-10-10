@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./delbutton.css";
 import "./editButton.css";
 import "./backButton.css";
@@ -135,6 +136,32 @@ const ButtonCancel = ({
   );
 };
 
+const ButtonHome = ({
+  onClick = () => alert(`ButtonBack Button clicked!`),
+}) => {
+  return (
+    <>
+      <button
+        className="right-button"
+        onClick={() => {
+          window.location.href = "/";
+        }}
+        style={{
+          backgroundColor: "green",
+          color: "white",
+          position: "absolute",
+          top: "10px",
+          left: "10px",
+        }}
+      >
+        <svg className="right-svgIcon" viewBox="0 0 20 20" fill="red">
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+        </svg>
+      </button>
+    </>
+  );
+};
+
 export {
   ButtonCall,
   ButtonModrn,
@@ -143,4 +170,5 @@ export {
   ButtonBack,
   ButtonRight,
   ButtonCancel,
+  ButtonHome,
 };

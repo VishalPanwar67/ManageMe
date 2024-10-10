@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import axios from "axios";
 
-import { Input, ButtonModrn, BoardOut } from "../../components/index.component";
+import {
+  Input,
+  ButtonModrn,
+  BoardOut,
+  ButtonHome,
+} from "../../components/index.component";
 
 const BoardPage = () => {
   const [error, setError] = useState(null);
@@ -48,6 +53,7 @@ const BoardPage = () => {
   return (
     <>
       <div className="w-full min-h-screen h-auto flex flex-col justify-content items-center bg-purple-900 p-3">
+        <ButtonHome />
         <h1 className="text-cyan-600 text-2xl font-bold ">Board Page </h1>
         <div className=" m-0 absolute top-16 right-20 z-10">
           <ButtonModrn

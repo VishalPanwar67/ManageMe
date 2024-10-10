@@ -1,8 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
-import { PrivateRoute } from "./components/index.component.js";
+import {
+  PrivateRoute,
+  Demo,
+  ButtonHome,
+} from "./components/index.component.js";
 
-import Demo from "./components/Demo.jsx";
+// import Demo from "./components/Demo.jsx";
 
 import {
   LoginPage,

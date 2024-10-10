@@ -16,14 +16,22 @@ const addActivityLog = asyncHandler(async (actionType, userId, context) => {
 
   return activityLog;
 });
+
+
 const getAllActivityLogs = asyncHandler(async (req, res) => {
-  const activityLogs = await ActivityLog.find().sort({ createdAt: -1 });
-  if (!activityLogs) {
-    throw new apiError(404, "All Activity logs not found");
+  const userId = req.user.id;
+
+  const activityLogs = await ActivityLog.find({ user: userId }).sort({
+    createdAt: -1,
+  });
+
+  if (!activityLogs || activityLogs.length === 0) {
+    throw new apiError(404, "No activity logs found for the current user");
   }
+
   res
     .status(200)
-    .json(new apiResponse(200, activityLogs, "All Activity logs retrieved"));
+    .json(new apiResponse(200, activityLogs, "User activity logs retrieved"));
 });
 
 export { addActivityLog, getAllActivityLogs };
