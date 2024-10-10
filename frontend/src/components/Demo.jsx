@@ -11,10 +11,14 @@ import {
 } from "./button/Button.jsx";
 import { Input } from "./Input.jsx";
 import ActiveLog from "./ActiveLog.jsx";
+import Profile from "./Profile.jsx";
+import BoardOut from "./Board/BoardOut.jsx";
 
 function Demo() {
   return (
     <div>
+      <BoardOut />
+      <Profile />
       <ButtonCall text="ButtonCall" color="orange" />
       <ButtonModrn text="ButtonModrn" color="cyan" />
       <ButtonDel />

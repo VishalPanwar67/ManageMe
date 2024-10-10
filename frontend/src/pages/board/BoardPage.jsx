@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import axios from "axios";
-import "./boardPage.css";
-import { Input, ButtonModrn } from "../../components/index.component";
+
+import { Input, ButtonModrn, BoardOut } from "../../components/index.component";
 
 const BoardPage = () => {
   const [error, setError] = useState(null);
@@ -87,13 +87,11 @@ const BoardPage = () => {
           {error && <p className="text-red-500">{error.message}</p>}
           {boards.map((board) => (
             <Link to={`/board/${board._id}`} key={board._id}>
-              <div className="notification">
-                <div className="notiglow"></div>
-                <div className="notiborderglow"></div>
-                <div className="notititle">{board.title}</div>
-                <div className="notibody">{board.description}</div>
-                <small className="notibody">{board.createdAt}</small>
-              </div>
+              <BoardOut
+                title={board.title}
+                description={board.description}
+                createdAt={board.createdAt}
+              />
             </Link>
           ))}
         </div>

@@ -1,14 +1,44 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { BoardPage } from "../index.Pages.js";
-import { ActiveLog } from "../../components/index.component.js";
+import {
+  ActiveLog,
+  Profile,
+  BoardOut,
+} from "../../components/index.component.js";
 import { formatDate } from "../../utils/indexUtils.js";
 
 const homepage = () => {
+  const [user, setUser] = useState(null);
+  const [boards, setBoards] = useState(null);
   const [activity, setActivity] = useState(null);
   const [error, setError] = useState(true);
 
   useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get("/api/api/auth/me", {});
+        setUser(response.data.data);
+        // console.log("get user home", response.data.data);
+        if (response.status === 201) {
+          return true;
+        }
+      } catch (error) {
+        console.error("Authentication check failed:", error);
+        return false;
+      }
+    };
+
+    const fetchBoards = async () => {
+      try {
+        const response = await axios.get("/api/board");
+        setBoards(response.data.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
     const fetchActivity = async () => {
       try {
         const response = await axios.get("/api/activityLog");
@@ -19,6 +49,8 @@ const homepage = () => {
         console.error("Error fetching activity", error);
       }
     };
+    fetchUser();
+    fetchBoards();
     fetchActivity();
   }, []);
 
@@ -26,14 +58,49 @@ const homepage = () => {
   return (
     <>
       <div className="w-full flex h-screen  justify-center bg-purple-600">
-        <div className="border-2 border-black w-[25vw] flex flex-col ">
+        <div className=" w-[25vw] flex flex-col ">
           {/* Profile section */}
-          <div className="border-2 border-yellow-500 h-[50vh] ">1</div>
+          <div className=" h-[80vh] flex justify-center pt-2">
+            {user && (
+              <Profile
+                name={user.username}
+                email={user.email}
+                createdAt={user.createdAt}
+              />
+            )}
+          </div>
           {/* comments section */}
-          <div className="border-2 border-yellow-500 h-[50vh]">1</div>
+          <div className=" h-[50vh]"></div>
         </div>
         {/* Board section */}
-        <div className="border-2 border-black w-[50vw]">123</div>
+        <div className=" w-[50vw] flex flex-col">
+          <div>
+            <h1 className="text-3xl font-serif font-semibold text-[#434955] text-center mt-5">
+              Boards
+            </h1>
+            {error && <p className="text-red-500">{error.message}</p>}
+          </div>
+          <div
+            className=" flex flex-wrap gap-3 overflow-y-scroll overflow-x-hidden p-3 "
+            style={{
+              alignItems: "center",
+              scrollbarColor: "rgba(238, 130, 238, 0.2) transparent",
+              scrollbarWidth: "thin",
+              scrollbarGutter: "stable",
+            }}
+          >
+            {boards &&
+              boards.map((board) => (
+                <Link to={`/board/${board._id}`} key={board._id}>
+                  <BoardOut
+                    title={board.title}
+                    description={board.description}
+                    createdAt={board.createdAt}
+                  />
+                </Link>
+              ))}
+          </div>
+        </div>
         {/* Active log section */}
         <div className="  w-[25vw] ">
           {error && <p className="text-red-500">{error.message}</p>}
@@ -50,6 +117,7 @@ const homepage = () => {
             {activity &&
               activity.map((activity) => (
                 <ActiveLog
+                  key={activity._id}
                   title={activity.activityContext.details.title}
                   type={activity.activityContext.type}
                   actionType={activity.actionType}

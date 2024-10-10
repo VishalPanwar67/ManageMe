@@ -1,4 +1,3 @@
-/* From Uiverse.io by SouravBandyopadhyay */ 
 .notification {
   display: flex;
   flex-direction: column;
@@ -9,10 +8,10 @@
   background: #29292c;
   border-radius: 1rem;
   overflow: hidden;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 16px;
   --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
-  --color: #32a6ff
+  --color: #32a6ff;
 }
 
 .notification:before {
@@ -21,7 +20,7 @@
   inset: 0.0625rem;
   border-radius: 0.9375rem;
   background: #18181b;
-  z-index: 2
+  z-index: 2;
 }
 
 .notification:after {
@@ -36,7 +35,7 @@
 }
 
 .notification:hover:after {
-  transform: translateX(0.15rem)
+  transform: translateX(0.15rem);
 }
 
 .notititle {
@@ -49,7 +48,7 @@
 }
 
 .notification:hover .notititle {
-  transform: translateX(0.15rem)
+  transform: translateX(0.15rem);
 }
 
 .notibody {
@@ -60,7 +59,7 @@
 }
 
 .notification:hover .notibody {
-  transform: translateX(0.25rem)
+  transform: translateX(0.25rem);
 }
 
 .notiglow,
@@ -69,7 +68,11 @@
   width: 20rem;
   height: 20rem;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle closest-side at center, white, transparent);
+  background: radial-gradient(
+    circle closest-side at center,
+    white,
+    transparent
+  );
   opacity: 0;
   transition: opacity 300ms ease;
 }
@@ -83,11 +86,11 @@
 }
 
 .notification:hover .notiglow {
-  opacity: 0.1
+  opacity: 0.1;
 }
 
 .notification:hover .notiborderglow {
-  opacity: 0.1
+  opacity: 0.1;
 }
 
 .note {
