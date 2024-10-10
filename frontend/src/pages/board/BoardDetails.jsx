@@ -121,6 +121,8 @@ const BoardDetails = () => {
                     <input
                       className="bg-gray-100 text-black rounded p-1"
                       value={updatedTitle}
+                      name="BoardUpdatedTitle"
+                      type="text"
                       onChange={(e) => setUpdatedTitle(e.target.value)}
                     />
                   ) : (
@@ -171,6 +173,7 @@ const BoardDetails = () => {
                       type="text"
                       placeholder="Board Description"
                       value={newListTitle}
+                      name="BoardTitle"
                       onChange={(e) => setNewListTitle(e.target.value)}
                     />
                     <div className=" flex  align-center justify-center gap-2 ">

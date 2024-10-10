@@ -134,6 +134,7 @@ const ListDetails = () => {
                 <input
                   type="text"
                   value={updatedTitle}
+                  name="title"
                   onChange={(e) => setUpdatedTitle(e.target.value)}
                   className="text-[16px] text-black bg-transparent border-[1px] outline-none"
                 />

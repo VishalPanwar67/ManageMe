@@ -72,7 +72,7 @@ const EditCard = () => {
     <>
       <div className="w-full min-h-screen h-auto  bg-purple-900 p-3">
         <ButtonHome />
-        <form>
+        <form id="edit-card-form">
           {error && <p className="text-red-500">{error}</p>}
 
           <div className="flex h-screen items-center justify-center ">
@@ -88,23 +88,27 @@ const EditCard = () => {
                   // placeholder="Email"
                   type="text"
                   value={title}
+                  name="title"
                   onChange={(e) => setTitle(e.target.value)}
                 />
                 <input
                   className="bg-slate-900 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-800  text-red-500"
                   value={description}
+                  name="description"
                   onChange={(e) => setDescription(e.target.value)}
                 />
                 <input
                   className="bg-slate-900 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-800  text-red-500"
                   type="date"
                   value={dueDate}
+                  name="dueDate"
                   onChange={(e) => setDueDate(e.target.value)}
                 />
                 <input
                   className="bg-slate-900 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-800  text-red-500"
                   type="text"
                   value={labels}
+                  name="labels"
                   onChange={(e) => setLabels(e.target.value)}
                 />
                 {error && <p className="error-message">{error}</p>}

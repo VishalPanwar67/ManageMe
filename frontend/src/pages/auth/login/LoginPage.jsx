@@ -27,7 +27,7 @@ const LoginPage = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="login-form">
         <div className="flex h-screen items-center justify-center  bg-purple-900 ">
           {/* From Uiverse.io by Yaya12085 */}
           <div className="w-96 rounded-2xl bg-slate-900 ">
@@ -39,6 +39,7 @@ const LoginPage = () => {
                 placeholder="Email"
                 type="email"
                 value={email}
+                name="LoginEmail"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
@@ -46,6 +47,7 @@ const LoginPage = () => {
                 placeholder="Password"
                 type="text"
                 value={password}
+                name="LoginPassword"
                 onChange={(e) => setPassword(e.target.value)}
               />
               {error && <p className="error-message">{error}</p>}

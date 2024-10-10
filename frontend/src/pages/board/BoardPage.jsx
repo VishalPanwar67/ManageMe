@@ -71,6 +71,7 @@ const BoardPage = () => {
               <Input
                 placeholder="Board Title"
                 value={newBoardTitle}
+                name="title"
                 onChange={(e) => setNewBoardTitle(e.target.value)}
                 // className="p-2 border rounded"
               />
@@ -78,6 +79,7 @@ const BoardPage = () => {
                 type="text"
                 placeholder="Board Description"
                 value={newBoardDescription}
+                name="description"
                 onChange={(e) => setNewBoardDescription(e.target.value)}
                 // className="p-2 border rounded ml-2"
               />

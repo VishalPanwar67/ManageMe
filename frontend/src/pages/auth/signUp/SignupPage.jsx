@@ -40,7 +40,7 @@ const SignupPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="signup-form">
         <div className="flex h-screen items-center justify-center  bg-purple-900 ">
           <div className="w-96 rounded-2xl bg-slate-900 ">
             <div className="flex flex-col gap-2 p-8">
@@ -52,6 +52,7 @@ const SignupPage = () => {
                 placeholder="username"
                 type="text"
                 value={username}
+                name="SignupUsername"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
@@ -59,6 +60,7 @@ const SignupPage = () => {
                 placeholder="Email"
                 type="email"
                 value={email}
+                name="Signupemail"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
@@ -66,12 +68,14 @@ const SignupPage = () => {
                 placeholder="Password"
                 type="text"
                 value={password}
+                name="Signuppassword"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <input
                 className="bg-slate-900 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-800  text-red-500"
                 placeholder="Confirm password"
                 type="password"
+                name="SignupconfirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
@@ -82,6 +86,7 @@ const SignupPage = () => {
                     className="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-gary-400 checked:border-green-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
                     type="checkbox"
                     checked={termsAccepted}
+                    name="SignuptermsAccepted"
                     onChange={(e) => setTermsAccepted(e.target.checked)}
                   />
                   <span className="pointer-events-none absolute left-1 top-1 block h-4 w-4 rounded-full bg-slate-600 transition-all duration-200 peer-checked:left-7 peer-checked:bg-green-300"></span>
