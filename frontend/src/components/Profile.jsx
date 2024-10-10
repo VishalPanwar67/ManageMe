@@ -2,7 +2,7 @@ import React from "react";
 import { formatDate } from "../utils/indexUtils";
 
 const Profile = ({
-  img = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+  img = "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-1024.png",
   name = "John Doe",
   bio = "DEVELOPER",
   email = "smkys@gmail.com",
