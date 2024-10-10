@@ -6,7 +6,7 @@ import {
   apiResponse,
   apiError,
   generateTokenAndSetCookie,
-} from "../utils/index.utils.js";
+} from "../utils/indexUtils.js";
 
 const register = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
