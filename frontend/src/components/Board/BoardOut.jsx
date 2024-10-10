@@ -1,6 +1,6 @@
 import React from "react";
 import { formatDate } from "../../utils/indexUtils.js";
-import "./BoardOut.css";  
+import "./boardOut.css";
 
 const BoardOut = ({
   title = "this is new board",
