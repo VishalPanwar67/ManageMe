@@ -64,7 +64,7 @@ const BoardDetails = () => {
   const deleteBoard = async (boardId) => {
     try {
       await axios.delete(`/api/board/${boardId}`);
-      console.log("Board deleted successfully");
+      // console.log("Board deleted successfully");
       navigate("/board");
     } catch (error) {
       console.error(error);

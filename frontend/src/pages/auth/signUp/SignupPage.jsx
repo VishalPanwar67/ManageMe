@@ -22,14 +22,14 @@ const SignupPage = () => {
       return;
     }
     try {
-      const response = await axios.post("/api/api/auth/register", {
+      const response = await axios.post("/api/auth/register", {
         username,
         email,
         password,
       });
       //   console.log(response.data);
       if (response.status === 201) {
-        console.log("Signup successful. Please login.");
+        // console.log("Signup successful. Please login.");
         navigate("/login");
       }
     } catch (error) {

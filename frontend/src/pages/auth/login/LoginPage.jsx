@@ -11,13 +11,13 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/api/auth/login", {
+      const response = await axios.post("/api/auth/login", {
         email,
         password,
       });
-      console.log(response.status);
+      // console.log(response.status);
       if (response.status === 201) {
-        console.log("Login successful. Redirecting...");
+        // console.log("Login successful. Redirecting...");
         navigate("/");
       }
     } catch (error) {

@@ -47,7 +47,7 @@ const EditCard = () => {
         dueDate,
         labels,
       });
-      console.log("Card updated successfully");
+      // console.log("Card updated successfully");
       // Use boardId to navigate to the correct list
       navigate(`/list/${boardId}/${listId}`, { state: { boardId } }); // Pass boardId as state
     } catch (error) {
@@ -58,7 +58,7 @@ const EditCard = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(`/api/card/${listId}/${cardId}`);
-      console.log("Card deleted successfully");
+      // console.log("Card deleted successfully");
       // Use boardId to navigate to the correct list
       navigate(`/list/${boardId}/${listId}`, { state: { boardId } }); // Pass boardId as state
     } catch (error) {

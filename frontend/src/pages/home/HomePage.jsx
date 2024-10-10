@@ -20,7 +20,7 @@ const homepage = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("/api/api/auth/me", {});
+        const response = await axios.get("/api/auth/me", {});
         setUser(response.data.data);
         // console.log("get user home", response.data.data);
         if (response.status === 201) {
@@ -43,8 +43,8 @@ const homepage = () => {
 
     const fetchActivity = async () => {
       try {
-        const response = await axios.get("/api/activityLog");
-        // console.log(response.data.data);
+        const response = await axios.get("/api/activityLog/");
+        // console.log("fetchActivity " + response.data.data);
         setActivity(response.data.data);
       } catch (error) {
         setError(error);
@@ -58,7 +58,7 @@ const homepage = () => {
 
   const logOut = async () => {
     try {
-      const response = await axios.post("/api/api/auth/logout", {});
+      const response = await axios.post("/api/auth/logout", {});
       if (response.status === 200) {
         // console.log("Logout successful. Redirecting...");
         navigate("/login");
@@ -104,7 +104,7 @@ const homepage = () => {
             <h1 className="text-3xl font-serif font-semibold text-[#434955] text-center mt-5">
               Boards
             </h1>
-            {error && <p className="text-red-500">{error.message}</p>}
+            {/* {error && <p className="text-red-500">{error.message}</p>} */}
           </div>
           <div
             className=" flex flex-wrap gap-3 overflow-y-scroll overflow-x-hidden p-3 "
@@ -129,7 +129,7 @@ const homepage = () => {
         </div>
         {/* Active log section */}
         <div className="  w-[25vw] ">
-          {error && <p className="text-red-500">{error.message}</p>}
+          {/* {error && <p className="text-red-500">{error.message}</p>} */}
           <div
             className="flex flex-col gap-1 pt-5 h-[98vh] overflow-y-scroll overflow-x-hidden 
                         "

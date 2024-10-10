@@ -47,12 +47,12 @@ const io = initSocket(server);
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/board", boardRoutes);
-app.use("/list", listRoutes);
-app.use("/search", searchRoutes);
-app.use("/card", setupCardRoutes(io));
-app.use("/comment", setupCommentRoutes(io));
-app.use("/activityLog", setupActivityLogRoutes(io));
+app.use("/api/board", boardRoutes);
+app.use("/api/list", listRoutes);
+app.use("/api/search", searchRoutes);
+app.use("/api/card", setupCardRoutes(io));
+app.use("/api/comment", setupCommentRoutes(io));
+app.use("/api/activityLog", setupActivityLogRoutes(io));
 
 app.use(errorHandler);
 
