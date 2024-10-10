@@ -27,13 +27,25 @@ function App() {
           element={<PrivateRoute children={<HomePage />} />}
         />
         {/* Board Routes */}
-        <Route path="/board" element={<BoardPage />} />
-        <Route path="/board/:boardId" element={<BoardDetails />} />
+        <Route
+          path="/board"
+          element={<PrivateRoute children={<BoardPage />} />}
+        />
+        <Route
+          path="/board/:boardId"
+          element={<PrivateRoute children={<BoardDetails />} />}
+        />
         {/* <Route path="/board/board1" element={<BoardDetails />} /> */}
         {/* list Routes */}
-        <Route path="/list/:boardId/:listId" element={<ListDetails />} />
+        <Route
+          path="/list/:boardId/:listId"
+          element={<PrivateRoute children={<ListDetails />} />}
+        />
         {/* card Routes*/}
-        <Route path="/card/:listId/:cardId" element={<CardDetails />} />
+        <Route
+          path="/card/:listId/:cardId"
+          element={<PrivateRoute children={<CardDetails />} />}
+        />
         {/* Auth Routes*/}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
