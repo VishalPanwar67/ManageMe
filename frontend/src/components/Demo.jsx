@@ -10,6 +10,7 @@ import {
   ButtonCancel,
 } from "./button/Button.jsx";
 import { Input } from "./Input.jsx";
+import ActiveLog from "./ActiveLog.jsx";
 
 function Demo() {
   return (
@@ -27,6 +28,8 @@ function Demo() {
         placeholder="Input"
         borderColor="yellow"
       />
+
+      <ActiveLog />
     </div>
   );
 }

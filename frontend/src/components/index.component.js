@@ -9,6 +9,7 @@ import {
   ButtonCancel,
 } from "./button/Button.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
+import ActiveLog from "./ActiveLog.jsx";
 
 export {
   PrivateRoute,
@@ -20,4 +21,5 @@ export {
   ButtonRight,
   ButtonCancel,
   Input,
+  ActiveLog,
 };
