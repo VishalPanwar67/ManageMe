@@ -1,5 +1,6 @@
 import express, { urlencoded } from "express";
 import dotenv from "dotenv";
+import path from "path";
 
 import cookieParser from "cookie-parser"; // to get cookies from req object and set cookies in res object
 import { v2 as cloudinary } from "cloudinary"; //for using cloudinary
@@ -25,6 +26,7 @@ dotenv.config({
 }); //dotevn file configed
 
 const PORT = process.env.PORT || 3000; //port
+const __dirname = path.resolve();
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -53,6 +55,14 @@ app.use("/comment", setupCommentRoutes(io));
 app.use("/activityLog", setupActivityLogRoutes(io));
 
 app.use(errorHandler);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  });
+}
 
 // connect the DataBase
 connectMongoDB()
