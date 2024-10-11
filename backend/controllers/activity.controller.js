@@ -1,5 +1,6 @@
 import { ActivityLog, Board, List, Card } from "../models/index.model.js";
-import { asyncHandler, apiResponse, apiError } from "../utils/indexUtils.js";
+import { asyncHandler, apiError } from "../utils/indexUtils.js";
+import { apiResponse } from "../utils/apiResponse.js";
 
 const addActivityLog = asyncHandler(async (actionType, userId, context) => {
   const activityLog = await ActivityLog.create({

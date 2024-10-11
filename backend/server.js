@@ -54,8 +54,6 @@ app.use("/api/card", setupCardRoutes(io));
 app.use("/api/comment", setupCommentRoutes(io));
 app.use("/api/activityLog", setupActivityLogRoutes(io));
 
-app.use(errorHandler);
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
@@ -63,6 +61,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   });
 }
+app.use(errorHandler);
 
 // connect the DataBase
 connectMongoDB()

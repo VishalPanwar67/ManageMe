@@ -1,6 +1,7 @@
 import { Board, User, List, Card } from "../models/index.model.js";
-import { asyncHandler, apiResponse, apiError } from "../utils/indexUtils.js";
+import { asyncHandler, apiError } from "../utils/indexUtils.js";
 import { addActivityLog } from "./activity.controller.js";
+import { apiResponse } from "../utils/apiResponse.js";
 
 const createBoard = asyncHandler(async (req, res) => {
   const { title, description } = req.body;

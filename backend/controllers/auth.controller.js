@@ -3,10 +3,10 @@ import bcrpypt from "bcryptjs";
 
 import {
   asyncHandler,
-  apiResponse,
   apiError,
   generateTokenAndSetCookie,
 } from "../utils/indexUtils.js";
+import { apiResponse } from "../utils/apiResponse.js";
 
 const register = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
