@@ -1,6 +1,6 @@
 import { Board, List, Card } from "../models/index.model.js";
 import { asyncHandler, apiError } from "../utils/indexUtils.js";
-import { apiResponse } from "../utils/apiResponse.js";
+import { apiResponse } from "../apiResponse.js";
 
 const searchBoards = asyncHandler(async (req, res) => {
   const { query } = req.query;
