@@ -1,6 +1,7 @@
 import { Card, Comment } from "../models/index.model.js";
-import { asyncHandler, apiError } from "../utils/indexUtils.js";
+import { asyncHandler } from "../utils/indexUtils.js";
 import { apiResponse } from "../apiResponse.js";
+import { apiError } from "../apiError.js";
 
 const addComment = asyncHandler(async (req, res, io) => {
   const cardID = req.params.cardID;
